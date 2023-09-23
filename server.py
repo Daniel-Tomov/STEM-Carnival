@@ -83,6 +83,7 @@ def sensor(game_uuid, sensor_name):
     return jsonify({"status":"there is not a player playing that game right now"})
   # put the data from the sensor in an array to save it
   save_data = [get_time(), sensor_name, data]
+  currently_running_games[player_uuid]["last_sensor_data"] = sensor_name + ": " + data
 
   # save the data to the "player_data" folder and the workbook name with the player uuid
   # each worksheet has the name of the game uuid
