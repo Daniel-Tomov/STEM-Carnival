@@ -11,7 +11,7 @@ def connect():
     print("Connected to %s!" % secrets["ssid"])
 
 
-def client_send(sensor_value):
+def client_send(sensor_uuid, sensor_value):
     socket = socketpool.SocketPool(wifi.radio)
     http = requests.Session(socket)
     response = http.post(
@@ -22,13 +22,13 @@ def client_send(sensor_value):
         + "/sensor/"
         + secrets["game_uuid"]
         + "/"
-        + secrets["sensor_uuid"],
+        + sensor_uuid,
         data=sensor_value,
     )
     print(response.text)
 
 
-def game_send(game_uuid, player_uuid):
+def game_send(player_uuid):
     socket = socketpool.SocketPool(wifi.radio)
     http = requests.Session(socket)
     response = http.post(
