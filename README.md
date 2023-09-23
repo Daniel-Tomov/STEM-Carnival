@@ -15,4 +15,8 @@ The client records values from connected sensors when the player is playing. The
 There are measures to ensure that sensor data is not accepted by the server if a player is not playing.
 
 ## Compatability
- - Raspberry Pico W
+ - [Raspberry Pico W](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html) and tested with [CircuitPython](https://circuitpython.org/board/raspberry_pi_pico/) 8.0.0-beta6
+
+## Changing Code
+
+I recommend using [Mu](https://codewith.mu/) to program the Raspberry Pi Pico W. Remember to set the "Mode" to "CircuitPython."
