@@ -1,9 +1,8 @@
 secrets = {
-    "ssid": "<insert ap ssid>",
-    "password": "<insert ap password>",
-    "server": "<insert server password>",
-    "port": "<insert server port>",
-    "game_uuid": "<insert the game UUID the sensor is responsible for>",
-    "sensor_uuid": "<insert the UUID of the sensor>",
+    "ssid": "lhs_stem_carnival",
+    "password": "lhs_stem_carnival",
+    "server": "192.168.5.140",
+    "port": "5555",
+    "game_uuid": "wall",
 }
 # the game uuid and sensor uuid appear as above in the output excel sheet
