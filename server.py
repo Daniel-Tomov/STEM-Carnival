@@ -26,10 +26,6 @@ app.config.update(
 # uuid: {current_game_uuid: None, data: {<uuids of sensors and their data>}}
 currently_running_games = {}
 
-def get_game_uuid_from_sensor_uuid(sensor_uuid):
-  # sensor uuids will be in the form of gameUUID_sensorname
-  return (sensor_uuid.split("_"))[1]
-
 def get_player_uuid_from_game_uuid(game_uuid):
   for player_uuid in currently_running_games:
     if currently_running_games[player_uuid]["current_game_uuid"] == game_uuid:
@@ -42,7 +38,7 @@ def get_time(): return datetime.now().strftime("%H:%M:%S")
 
 @app.route('/', methods=["POST", "GET"])
 def index():
-  return ""
+  return make_response(render_template('index.html', currently_running_games=currently_running_games))
 
 
 @app.route('/game/<string:game_uuid>', methods=["POST", 'GET']) 
