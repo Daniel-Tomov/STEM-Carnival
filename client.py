@@ -14,7 +14,7 @@ def connect():
 def client_send(sensor_value):
     socket = socketpool.SocketPool(wifi.radio)
     http = requests.Session(socket)
-    response = http.get(
+    response = http.post(
         url="http://"
         + secrets["server"]
         + ":"
@@ -31,7 +31,7 @@ def client_send(sensor_value):
 def game_send(game_uuid, player_uuid):
     socket = socketpool.SocketPool(wifi.radio)
     http = requests.Session(socket)
-    response = http.get(
+    response = http.post(
         url="http://"
         + secrets["server"]
         + ":"
